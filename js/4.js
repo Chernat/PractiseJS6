@@ -1,8 +1,10 @@
 function createCloneNode(block) {
-  if (block === 'span' || 'div' || 'p') {
-    for (var i = 0; i < document.getElementsByTagName(block).length; i++) {
-      var cloneBlock = document.getElementsByTagName(block)[i].cloneNode(true);
-      document.body.appendChild(cloneBlock);
+  if ((block === 'span') || (block === 'div') || (block === 'p')) {
+    var cloneBlock = document.getElementsByTagName(block);
+    var cloneBlockItem;
+    for (var i = 0; i < cloneBlock.length; i++) {
+      cloneBlockItem = cloneBlock[i].cloneNode(true);
+      document.body.appendChild(cloneBlockItem);
     }
   }
 }
