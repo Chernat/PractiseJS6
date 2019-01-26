@@ -1,13 +1,12 @@
 // Покрасьте все буквы текста в заданном элементе в разные случайные цвета. Список цветов должен хранится в массиве.
 // Две соседние буквы не должны иметь одинаковый цвет.
 
-var word = document.getElementById('colored-letter').innerText;
-
-console.log(coloredLetter(word));
+coloredLetter('Радуга');
 
 function coloredLetter(elem) {
   var colors = colorArr(elem);
   var newWord = document.createElement('div');
+  newWord.id = 'seventh-task';
 
   for (var i = 0; i < elem.length; i++) {
     var span = document.createElement('span');
@@ -15,8 +14,8 @@ function coloredLetter(elem) {
     span.style.color = colors[i];
     newWord.appendChild(span);
   }
-
-  return document.body.appendChild(newWord);
+  
+  document.body.insertBefore(newWord, document.getElementById('eighth-task'));
 }
 
 function colorArr(elem) {

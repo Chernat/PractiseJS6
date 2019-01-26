@@ -41,36 +41,50 @@ const ANCESTRY_FILE = [
 ];
 
 createCards(ANCESTRY_FILE);
-// console.log(intermediateAgeMotherAndDother(ANCESTRY_FILE));
-// console.log(intermediateMaleAge(ANCESTRY_FILE));
-// console.log(intermediateFemaleAge(ANCESTRY_FILE));
 creatIntermediateBlock(ANCESTRY_FILE);
 
 function createCards(arr) {
   var cardArea = document.createElement('div');
   cardArea.className = 'area';
-  // cardArea.style.display = 'flex';
-  document.body.appendChild(cardArea);
+  cardArea.style.display = 'flex';
+  cardArea.style.flexFlow = 'wrap';
+  document.getElementById('eighth-task').appendChild(cardArea);
 
   for (var i = 0; i < arr.length; i++) {
+    var cardBlock = document.createElement('div');
+    cardBlock.className = 'card-block';
+    cardBlock.style.width = '30%';
+    cardBlock.style.padding = '1%';
+    cardArea.appendChild(cardBlock);
+
     var card = document.createElement('div');
     card.className = 'card';
-    // card.style.width = '20%';
-    cardArea.appendChild(card);
+    card.style.backgroundColor = '#029a3e';
+    card.style.borderRadius = '10px';
+    card.style.border = '5px solid #ffd745';
+    cardBlock.appendChild(card);
 
     var name = document.createElement('h2');
-    name.innerText = arr[i].name;
+    name.innerText = '- ' + arr[i].name + ' -';
     name.className = 'card__name';
+    name.style.paddingTop = '20px';
+    name.style.color = '#ffd745';
+    name.style.textAlign = 'center'
     card.appendChild(name);
 
     var sex = document.createElement('p');
-    if (arr[i].sex === 'm') sex.innerText = 'male';
-    if (arr[i].sex === 'f') sex.innerText = 'female';
+    if (arr[i].sex === 'm') sex.innerText = '\u2642 male';
+    if (arr[i].sex === 'f') sex.innerText = '\u2640 female';
     sex.className = 'card__sex';
+    sex.style.marginTop = '5px';
+    sex.style.color = '#fff';
+    sex.style.textAlign = 'center';
     card.appendChild(sex);
 
     var dateLife = document.createElement('p');
     dateLife.innerText = arr[i].born + ' - ' + arr[i].died;
+    dateLife.style.textAlign ='center';
+    dateLife.style.color = '#fff';
     card.appendChild(dateLife);
 
     var father = document.createElement('p');
@@ -79,6 +93,9 @@ function createCards(arr) {
     } else {
       father.innerText = 'Father: ' + arr[i].father;
     }
+    father.style.color = '#fff';
+    father.style.textAlign = 'center';
+    father.style.fontSize = '18px';
     card.appendChild(father);
 
     var mother = document.createElement('p');
@@ -87,6 +104,10 @@ function createCards(arr) {
     } else {
       mother.innerText = 'Mother: ' +  arr[i].mother;
     }
+    mother.style.color = '#fff';
+    mother.style.textAlign = 'center';
+    mother.style.fontSize = '18px';
+    mother.style.paddingBottom = '20px';
     card.appendChild(mother);
   }
 }
@@ -108,7 +129,6 @@ function intermediateAgeMotherAndDother(arr) {
   return Math.round(age / count);
 }
 
-
 function intermediateMaleAge(arr) {
   var count = 0;
   var age = 0;
@@ -122,7 +142,6 @@ function intermediateMaleAge(arr) {
 
   return Math.round(age / count);
 }
-
 
 function intermediateFemaleAge(arr) {
   var count = 0;
@@ -138,14 +157,38 @@ function intermediateFemaleAge(arr) {
   return Math.round(age / count);
 }
 
-
 function creatIntermediateBlock(arr) {
-  var intermediateBlock = document.createElement('div');
-  document.body.appendChild(intermediateBlock);
-  var interMotherAndDotherAge = intermediateBlock.createElement('p');
-  interMotherAndDotherAge.innerText = intermediateAgeMotherAndDother(arr);
-  var interMale = intermediateBlock.createElement('p');
-  interMale.innerText = intermediateMaleAge(arr);
-  var interFemale = intermediateBlock.createElement('p');
-  interFemale.innerText = intermediateFemaleAge(arr);
+  var block = document.createElement('div');
+  block.className = 'statistic'
+  block.style.display = 'flex';
+  block.style.flexDirection = 'column';
+  block.style.alignItems = 'center';
+  block.style.backgroundColor = '#029a3e';
+  block.style.borderRadius = '10px';
+  block.style.border = '5px solid #ffd745';
+  document.getElementById('eighth-task').appendChild(block);
+
+  var title = document.createElement('h2');
+  title.className = 'statistic__title';
+  title.innerText = 'Statistic Block';
+  title.style.color = '#ffd745';
+  block.appendChild(title);
+
+  var mother = document.createElement('p');
+  mother.className = 'statistic__mother';
+  mother.innerText = 'Average difference between mothers and children: ' + intermediateAgeMotherAndDother(arr) + ' years';
+  mother.style.color = '#fff';
+  block.appendChild(mother);
+
+  var male = document.createElement('p');
+  male.className = 'statistic__male';
+  male.innerText = 'Average male age: ' + intermediateMaleAge(arr) + ' years old';
+  male.style.color = '#fff';
+  block.appendChild(male);
+
+  var female = document.createElement('p');
+  female.className = 'statistic__female';
+  female.innerText = 'Average female age: ' + intermediateFemaleAge(arr) + ' years old';
+  female.style.color = '#fff';
+  block.appendChild(female);
 }

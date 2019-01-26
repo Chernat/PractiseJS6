@@ -1,7 +1,7 @@
 // Напишите функцию replaceElementBy(blockCurrent, blockToReplace) которая будет  заменять blockCurrent на blockToReplace и выводить сообщение в консоль после успешного проведения операции!
 
-var blockCurrent = document.getElementById('span-1');
-var blockToReplace = document.createElement('span');
+var blockCurrent = document.getElementById('sixth-task');
+var blockToReplace = document.createElement('div');
 blockToReplace.className = 'new-block';
 
 replaceElementBy(blockCurrent, blockToReplace);
