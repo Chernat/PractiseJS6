@@ -7,6 +7,8 @@ function coloredLetter(elem) {
   var colors = colorArr(elem);
   var newWord = document.createElement('div');
   newWord.id = 'seventh-task';
+  newWord.style.fontSize = '30px';
+  newWord.style.textTransform = 'uppercase';
 
   for (var i = 0; i < elem.length; i++) {
     var span = document.createElement('span');
@@ -14,7 +16,7 @@ function coloredLetter(elem) {
     span.style.color = colors[i];
     newWord.appendChild(span);
   }
-  
+
   document.body.insertBefore(newWord, document.getElementById('eighth-task'));
 }
 

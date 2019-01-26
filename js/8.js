@@ -53,13 +53,13 @@ function createCards(arr) {
   for (var i = 0; i < arr.length; i++) {
     var cardBlock = document.createElement('div');
     cardBlock.className = 'card-block';
-    cardBlock.style.width = '30%';
-    cardBlock.style.padding = '1%';
+    cardBlock.style.padding = '1rem';
     cardArea.appendChild(cardBlock);
 
     var card = document.createElement('div');
     card.className = 'card';
     card.style.backgroundColor = '#029a3e';
+    card.style.padding = '2rem'
     card.style.borderRadius = '10px';
     card.style.border = '5px solid #ffd745';
     cardBlock.appendChild(card);
