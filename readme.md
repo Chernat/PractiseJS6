@@ -1,3 +1,3 @@
 # Practise JS 6 DOM
 
-[GH page](https://chernat.github.io/Practise4JS/)
+[GH page](https://chernat.github.io/PractiseJS6/)
