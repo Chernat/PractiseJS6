@@ -59,7 +59,7 @@ function createCards(arr) {
     var card = document.createElement('div');
     card.className = 'card';
     card.style.backgroundColor = '#029a3e';
-    card.style.padding = '2rem'
+    card.style.padding = '2rem';
     card.style.borderRadius = '10px';
     card.style.border = '5px solid #ffd745';
     cardBlock.appendChild(card);
@@ -69,7 +69,7 @@ function createCards(arr) {
     name.className = 'card__name';
     name.style.paddingTop = '20px';
     name.style.color = '#ffd745';
-    name.style.textAlign = 'center'
+    name.style.textAlign = 'center';
     card.appendChild(name);
 
     var sex = document.createElement('p');
