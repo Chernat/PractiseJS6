@@ -53,7 +53,7 @@ function createCards(arr) {
   for (var i = 0; i < arr.length; i++) {
     var cardBlock = document.createElement('div');
     cardBlock.className = 'card-block';
-    cardBlock.style.margin = 'auto';
+    cardBlock.style.margin = '0 auto';
 
     cardBlock.style.width = 'calc(1200px / 3)';
     cardArea.appendChild(cardBlock);
