@@ -1,11 +1,11 @@
 //Напишите функцию createSpanInBlockByID(blockID) которая будет создавать элемент 'span' в блоке id=blockID
 
-function createSpanBlockByClass(name) {
-  var id = document.getElementById(name);
+function createSpanBlockByClass(idElem) {
+  var elem = document.getElementById(idElem);
 
-  if (id.getElementsByTagName('span').length === 0) {
+  if (elem.getElementsByTagName('span').length === 0) {
     var span = document.createElement('span');
-    id.appendChild(span);
+    elem.appendChild(span);
   }
 }
 

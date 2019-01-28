@@ -164,7 +164,7 @@ function intermediateFemaleAge(arr) {
 
 function creatIntermediateBlock(arr) {
   var block = document.createElement('div');
-  block.className = 'statistic'
+  block.className = 'statistic';
   block.style.display = 'flex';
   block.style.flexDirection = 'column';
   block.style.alignItems = 'center';

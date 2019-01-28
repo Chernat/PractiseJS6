@@ -2,8 +2,8 @@
 
 createCloneNode('fourth-task');
 
-function createCloneNode(block) {
-  var cloneBlock = document.getElementById(block).cloneNode(true);
+function createCloneNode(blockId) {
+  var cloneBlock = document.getElementById(blockId).cloneNode(true);
   cloneBlock.className = 'cloned-block';
   document.body.insertBefore(cloneBlock, document.getElementById('fifth-task'));
 }
